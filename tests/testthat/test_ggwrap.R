@@ -9,3 +9,15 @@ test_that("ggwrap runs without error", {
   expect_silent(ggwrap(plot, 4))
   expect_silent(ggwrap(plot, 40))
 })
+
+context("printggwrap")
+
+test_that("print.ggwrap runs without error", {
+  plot <- ggplot2::ggplot(
+    ggplot2::economics,
+    ggplot2::aes(x = date, y = unemploy)
+  ) + 
+    ggplot2::geom_line()
+  plot <- ggwrap(plot, 4)
+  expect_silent(plot)
+})

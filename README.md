@@ -38,6 +38,3 @@ ggwrap(plot, 4)
 ```
 
 ![](man/figures/README-unnamed-chunk-4-1.png)<!-- -->
-
-`ggwrap` doesn’t yet work with `ggsave`, so you’ll have to use `pdf()`
-or similar to save the plot.

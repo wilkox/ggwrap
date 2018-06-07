@@ -1,6 +1,7 @@
 #' Wrap a 'gglot2' plot over multiple rows.
 #'
-#' @return Draws the wrapped plot to the current graphics device.
+#' @return Returns a plot object which can be viewed or saved to file with
+#' `ggplot2::ggsave`.
 #'
 #' @param plot A 'ggplot2' plot to be wrapped.
 #' @param n The number of rows in the wrapped plot.
@@ -11,7 +12,7 @@
 #'   ggplot2::aes(x = date, y = unemploy, colour = uempmed)
 #' ) +
 #'   ggplot2::geom_line()
-#' ggwrap(plot, 4)
+#' plot <- ggwrap(plot, 4)
 #' @export
 ggwrap <- function(plot, n) {
 
@@ -49,13 +50,29 @@ ggwrap <- function(plot, n) {
   pgrob$grobs[[3]] <- ggplot2::zeroGrob()
   pgrob$grobs[[7]] <- ggplot2::zeroGrob()
 
+  # Add 'ggwrap' class
+  class(pgrob) <- c("ggwrap", class(pgrob))
+
+  # Return
+  pgrob
+}
+
+#' @export
+print.ggwrap <- function(x, ...) {
+
   grid::grid.newpage()
+
+  # Record dependency on 'ggplot2' on the display list
+  # (AFTER grid.newpage())
   grDevices::recordGraphics(
     requireNamespace("ggplot2", quietly = TRUE),
     list(),
     getNamespace("ggplot2")
   )
-  grid::grid.draw(pgrob)
+
+  grid::grid.draw(x)
+
+  invisible(x)
 }
 
 # Select a horizontal slice of a grob. Not exported.

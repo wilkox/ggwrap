@@ -12,7 +12,8 @@ ggwrap(plot, n)
 \item{n}{The number of rows in the wrapped plot.}
 }
 \value{
-Draws the wrapped plot to the current graphics device.
+Returns a plot object which can be viewed or saved to file with
+`ggplot2::ggsave`.
 }
 \description{
 Wrap a 'gglot2' plot over multiple rows.
@@ -23,5 +24,5 @@ plot <- ggplot2::ggplot(
   ggplot2::aes(x = date, y = unemploy, colour = uempmed)
 ) +
   ggplot2::geom_line()
-ggwrap(plot, 4)
+plot <- ggwrap(plot, 4)
 }

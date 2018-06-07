@@ -36,6 +36,7 @@ rows over which the plot should be wrapped.
 Here's a simple plot.
 
 ```{r}
+library(ggplot2)
 library(ggwrap)
 plot <- ggplot(economics, aes(x = date, y = unemploy, colour = uempmed)) +
   geom_line()
@@ -47,5 +48,3 @@ We can use `ggwrap` to wrap the plot over four rows.
 ```{r}
 ggwrap(plot, 4)
 ```
-
-`ggwrap` doesn't yet work with `ggsave`, so you'll have to use `pdf()` or similar to save the plot.
