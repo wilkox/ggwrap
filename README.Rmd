@@ -36,7 +36,6 @@ rows over which the plot should be wrapped.
 Here's a simple plot.
 
 ```{r}
-library(ggplot2)
 library(ggwrap)
 plot <- ggplot(economics, aes(x = date, y = unemploy, colour = uempmed)) +
   geom_line()
