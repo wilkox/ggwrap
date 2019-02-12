@@ -1,7 +1,11 @@
 
+  - [Installation](#installation)
+  - [Usage](#usage)
+
 [![Travis-CI Build
 Status](https://travis-ci.org/wilkox/ggwrap.svg?branch=master)](https://travis-ci.org/wilkox/ggwrap)
 [![CRAN\_Status\_Badge](http://www.r-pkg.org/badges/version/ggwrap)](https://cran.r-project.org/package=ggwrap)
+[![lifecycle](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
 
 ‘ggwrap’ wraps a ‘ggplot2’ plot over multiple rows, to make plots with
 long x axes easier to read.
