@@ -1,11 +1,11 @@
+[![CRAN_Status_Badge](http://www.r-pkg.org/badges/version/ggwrap)](https://cran.r-project.org/package=ggwrap)
+[![Lifecycle: deprecated](https://img.shields.io/badge/lifecycle-deprecated-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html#deprecated)
 
-  - [Installation](#installation)
-  - [Usage](#usage)
+# This package is no longer maintained
 
-[![Travis-CI Build
-Status](https://travis-ci.org/wilkox/ggwrap.svg?branch=master)](https://travis-ci.org/wilkox/ggwrap)
-[![CRAN\_Status\_Badge](http://www.r-pkg.org/badges/version/ggwrap)](https://cran.r-project.org/package=ggwrap)
-[![lifecycle](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
+Use [`ggbreak::scale_wrap()`](https://cran.r-project.org/web/packages/ggbreak/vignettes/ggbreak.html#wrap-plot) instead.
+
+# ggwrap
 
 ‘ggwrap’ wraps a ‘ggplot2’ plot over multiple rows, to make plots with
 long x axes easier to read.
@@ -14,7 +14,7 @@ long x axes easier to read.
 
 The development version of ‘ggwrap’ can be installed from GitHub:
 
-``` r
+```r
 devtools::install_github("wilkox/ggwrap")
 ```
 
@@ -25,7 +25,7 @@ number of rows over which the plot should be wrapped.
 
 Here’s a simple plot.
 
-``` r
+```r
 library(ggplot2)
 library(ggwrap)
 plot <- ggplot(economics, aes(x = date, y = unemploy, colour = uempmed)) +
@@ -37,7 +37,7 @@ plot
 
 We can use `ggwrap` to wrap the plot over four rows.
 
-``` r
+```r
 ggwrap(plot, 4)
 ```
 
